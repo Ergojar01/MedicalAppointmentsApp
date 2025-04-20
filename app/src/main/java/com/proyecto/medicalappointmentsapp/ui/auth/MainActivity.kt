@@ -1,4 +1,6 @@
 package com.proyecto.medicalappointmentsapp.ui.auth
+import android.view.Menu // Para Menu.NONE
+import androidx.navigation.NavOptions
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log

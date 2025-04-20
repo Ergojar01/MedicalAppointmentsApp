@@ -28,6 +28,8 @@ navigation = "2.7.7" # O la última versión estable
 firebaseBom = "33.1.0" # Revisa https://firebase.google.com/docs/android/setup#available-libraries
 
 # Google Play Services Auth - Necesita versión explícita
+navigationFragmentKtx = "2.8.9"
+navigationUiKtx = "2.8.9"
 playServicesAuth = "21.3.0" # O la última versión estable
 
 # Testing
@@ -41,6 +43,8 @@ activityVersion = "1.10.1"
 # --- AndroidX Core & UI ---
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+androidx-navigation-fragment-ktx-v289 = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
+androidx-navigation-ui-ktx-v289 = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigationUiKtx" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 androidx-activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "activity" } # Cambiado a KTX

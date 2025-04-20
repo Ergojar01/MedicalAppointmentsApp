@@ -25,4 +25,4 @@
         app:layout_constraintStart_toStartOf="@+id/progressBar"
         app:layout_constraintTop_toBottomOf="@+id/progressBar" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>straintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -91,8 +91,8 @@ dependencies {
 
     // --- Navegación (Recomendado) ---
     // ¡ASEGÚRATE DE USAR LA ÚLTIMA VERSIÓN!
-    implementation(libs.androidx.navigation.fragment.ktx)
-    implementation(libs.androidx.navigation.ui.ktx)
+    implementation("androidx.navigation:navigation-fragment-ktx:2.8.9") // Reemplaza con la última versión estable
+    implementation("androidx.navigation:navigation-ui-ktx:2.8.9")     // Reemplaza con la última versión estable
     implementation(libs.androidx.activity)
 
     // --- Pruebas ---
