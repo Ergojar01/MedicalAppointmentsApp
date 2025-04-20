@@ -10,7 +10,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.proyecto.medicalappointmentsapp.databinding.ActivityLoginBinding // Importa tu ViewBinding generado
-import com.proyecto.medicalappointmentsapp.ui.MainActivity // La actividad principal después del login
+import com.proyecto.medicalappointmentsapp.ui.auth.MainActivity // La actividad principal después del login
 
 class LoginActivity : AppCompatActivity() {
 

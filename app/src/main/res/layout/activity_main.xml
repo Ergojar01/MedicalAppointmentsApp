@@ -1,10 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.auth.MainActivity">
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_loading"> <fragment
+    android:id="@+id/nav_loading"
+    android:name="com.proyecto.medicalappointmentsapp.ui.common.LoadingFragment"
+    android:label="Cargando..."
+    tools:layout="@layout/fragment_loading" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <fragment
+        android:id="@+id/nav_patient_dashboard"
+        android:name="com.proyecto.medicalappointmentsapp.ui.patient.PatientDashboardFragment"
+        android:label="@string/menu_patient_dashboard"
+        tools:layout="@layout/fragment_patient_dashboard" />
+
+    <fragment
+        android:id="@+id/nav_doctor_dashboard"
+        android:name="com.proyecto.medicalappointmentsapp.ui.doctor.DoctorDashboardFragment"
+        android:label="@string/menu_doctor_dashboard"
+        tools:layout="@layout/fragment_doctor_dashboard" />
+
+    <fragment
+        android:id="@+id/nav_admin_dashboard"
+        android:name="com.proyecto.medicalappointmentsapp.ui.admin.AdminDashboardFragment"
+        android:label="@string/menu_admin_dashboard"
+        tools:layout="@layout/fragment_admin_dashboard" />
+
+    <fragment
+        android:id="@+id/nav_default_or_error"
+        android:name="com.proyecto.medicalappointmentsapp.ui.common.ErrorFragment"
+        android:label="Error"
+        tools:layout="@layout/fragment_error" />
+
+</navigation>
