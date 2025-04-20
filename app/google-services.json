@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "642698590742",
+    "project_id": "medicalappointmentsapp-54c67",
+    "storage_bucket": "medicalappointmentsapp-54c67.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:642698590742:android:e3b6fe66b80ba6f71bd337",
+        "android_client_info": {
+          "package_name": "com.proyecto.medicalappointmentsapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdiYRImY6c8XCk-kZksjB4JGBCwzdZ6F0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
