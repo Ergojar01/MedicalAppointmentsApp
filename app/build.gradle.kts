@@ -1,25 +1,26 @@
 // build.gradle.kts (app level)
+// REVISADO Y CORREGIDO - Usa Data Binding y limpia dependencias
+// ASUME que tienes un archivo libs.versions.toml configurado.
 
 plugins {
-    // Usar alias del Version Catalog para todos los plugins
+    // Usar alias del Version Catalog
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.google.gms.google.services)
-    alias(libs.plugins.kotlin.parcelize) // Añadido desde el segundo snippet
-    // Opcional pero recomendado si usas Navigation Component con Safe Args:
-    // alias(libs.plugins.androidx.navigation.safeargs.kotlin)
+    id("kotlin-kapt") // *** NECESARIO para Data Binding ***
+    alias(libs.plugins.androidx.navigation.safeargs.kotlin) // Habilitado como en el original
+    // Considera añadir kotlin-parcelize si realmente lo necesitas y está en libs.toml
+    // alias(libs.plugins.kotlin.parcelize)
 }
 
 android {
     namespace = "com.proyecto.medicalappointmentsapp"
-    // Usa la última SDK estable disponible (ej. 34)
-    compileSdk = 35 // AJUSTAR según la última SDK estable
+    compileSdk = 35 // Usar SDK estable (como en el original)
 
     defaultConfig {
         applicationId = "com.proyecto.medicalappointmentsapp"
         minSdk = 24
-        // Target SDK debería coincidir con Compile SDK
-        targetSdk = 35 // AJUSTAR según la última SDK estable
+        targetSdk = 35 // Usar SDK estable (como en el original)
         versionCode = 1
         versionName = "1.0"
 
@@ -28,7 +29,7 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false // Considera ponerlo a 'true' para lanzamientos
+            isMinifyEnabled = false // Cambiar a true para producción
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -36,71 +37,60 @@ android {
         }
     }
     compileOptions {
+        // Java 11 está bien, considera 17 si usas AGP muy reciente
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "11" // Coincidir con compileOptions
     }
     buildFeatures {
-        // Habilitar ViewBinding (recomendado)
-        viewBinding = true
+        dataBinding = true // *** CORREGIDO: Habilitar Data Binding ***
     }
-    // Necesario si usas Safe Args
-    // navigation {
-    //     safeArgs = true
-    // }
+    // Habilitar Safe Args como en el original
+    navigation {
+        safeArgs = true
+    }
 }
 
 dependencies {
 
     // --- Core y UI ---
+    // Asegúrate de que estos alias (ej. libs.androidx.core.ktx) existan en tu libs.versions.toml
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.constraintlayout)
-    implementation(libs.androidx.activity.ktx) // KTX para Activity (útil con ViewModels)
-    implementation(libs.androidx.fragment.ktx) // KTX para Fragment (útil con ViewModels)
-    implementation("androidx.core:core-ktx:1.16.0") // O versión más reciente
-    implementation(libs.androidx.appcompat) // O versión más reciente
-    implementation("com.google.android.material:material:1.12.0") // O versión más reciente
-    implementation("androidx.constraintlayout:constraintlayout:2.2.1") // O versión más reciente
-    implementation("androidx.drawerlayout:drawerlayout:1.2.0") // Específicamente para DrawerLayout
+    implementation(libs.androidx.activity.ktx) // KTX para Activity
+    implementation(libs.androidx.fragment.ktx) // KTX para Fragment
+    // Si necesitas DrawerLayout específicamente y no viene con Material/AppCompat:
+    implementation(libs.androidx.drawerlayout) // Asume alias 'androidx-drawerlayout'
+
     // --- Firebase ---
-    // Importa el BoM (Bill of Materials) - ¡ASEGÚRATE DE USAR LA ÚLTIMA VERSIÓN!
-    // Revisa https://firebase.google.com/docs/android/setup#available-libraries
-    implementation(platform(libs.firebase.bom)) // Asume alias 'firebase-bom' en libs.versions.toml
+    // Importa el BoM (Bill of Materials) - Gestiona versiones de Firebase
+    implementation(platform(libs.firebase.bom)) // Asume alias 'firebase-bom'
 
-    // Autenticación (ya no necesita -ktx explícito con BoM generalmente)
-    implementation(libs.firebase.auth)
-    // Firestore
-    implementation(libs.firebase.firestore)
-    // Cloud Messaging (si necesitas notificaciones push)
-    // implementation(libs.firebase.messaging)
-
-    // Google Sign-In (necesario si usas autenticación con Google)
-    // ¡ASEGÚRATE DE USAR LA ÚLTIMA VERSIÓN!
-    implementation(libs.google.services.auth) // Asume alias 'google-services-auth' en libs.versions.toml
+    // Dependencias de Firebase (sin versión explícita aquí)
+    implementation(libs.firebase.auth) // Asume alias 'firebase-auth'
+    implementation(libs.firebase.firestore) // Asume alias 'firebase-firestore'
+    // implementation(libs.firebase.database) // Si usas Realtime DB, descomenta y asume alias 'firebase-database'
 
     // --- Componentes de Arquitectura (MVVM) ---
-    implementation(libs.androidx.lifecycle.viewmodel.ktx)
-    implementation(libs.androidx.lifecycle.livedata.ktx) // O runtime-ktx si prefieres StateFlow
-    implementation(libs.androidx.lifecycle.runtime.ktx) // Para lifecycleScope
+    implementation(libs.androidx.lifecycle.viewmodel.ktx) // Asume alias 'androidx-lifecycle-viewmodel-ktx'
+    implementation(libs.androidx.lifecycle.livedata.ktx) // Asume alias 'androidx-lifecycle-livedata-ktx'
+    implementation(libs.androidx.lifecycle.runtime.ktx) // Asume alias 'androidx-lifecycle-runtime-ktx' // Para lifecycleScope
 
     // --- Coroutines ---
-    // ¡ASEGÚRATE DE USAR LA ÚLTIMA VERSIÓN!
-    implementation(libs.kotlinx.coroutines.core) // Coroutines core (puede ser transitiva)
-    implementation(libs.kotlinx.coroutines.android) // Para Dispatchers.Main
-    implementation(libs.kotlinx.coroutines.play.services) // Para integrar Tasks de Firebase/Play Services
+    implementation(libs.kotlinx.coroutines.core) // Asume alias 'kotlinx-coroutines-core'
+    implementation(libs.kotlinx.coroutines.android) // Asume alias 'kotlinx-coroutines-android' // Para Dispatchers.Main
+    // implementation(libs.kotlinx.coroutines.play.services) // Descomentar si usas Tasks.await() con Firebase/Play Services, asume alias
 
-    // --- Navegación (Recomendado) ---
-    // ¡ASEGÚRATE DE USAR LA ÚLTIMA VERSIÓN!
-    implementation("androidx.navigation:navigation-fragment-ktx:2.8.9") // Reemplaza con la última versión estable
-    implementation("androidx.navigation:navigation-ui-ktx:2.8.9")     // Reemplaza con la última versión estable
-    implementation(libs.androidx.activity)
+    // --- Navegación ---
+    implementation(libs.androidx.navigation.fragment.ktx) // Asume alias 'androidx-navigation-fragment-ktx'
+    implementation(libs.androidx.navigation.ui.ktx) // Asume alias 'androidx-navigation-ui-ktx'
 
     // --- Pruebas ---
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+    testImplementation(libs.junit) // Asume alias 'junit'
+    androidTestImplementation(libs.androidx.junit) // Asume alias 'androidx-junit'
+    androidTestImplementation(libs.androidx.espresso.core) // Asume alias 'androidx-espresso-core'
 }
