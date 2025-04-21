@@ -1,88 +1,68 @@
-# gradle/libs.versions.toml
-
 [versions]
 # --- Plugins ---
-agp = "8.8.0" # O la última versión compatible con tu Android Studio
-kotlin = "1.9.24" # O la última versión estable
-googleGmsGoogleServices = "4.4.2" # O la última versión
-# kotlinParcelize = kotlin # Usa la misma versión de Kotlin
-
-# --- SDKs (Opcional ponerlas aquí, pero ayuda a la consistencia) ---
-# compileSdk = "34"
-# minSdk = "24"
-# targetSdk = "34"
+agp = "8.8.0"
+kotlin = "1.9.24"
+googleGmsGoogleServices = "4.4.2"
+navigation = "2.7.7"
+drawerlayout = "1.2.0"
 
 # --- Librerías ---
 coreKtx = "1.15.0"
 appcompat = "1.7.0"
 material = "1.12.0"
-# constraintlayout = "2.1.4" # VERIFICAR ÚLTIMA VERSIÓN ESTABLE (2.2.1 es sospechoso)
-constraintlayout = "2.1.4" # Usando versión estable conocida
+constraintlayout = "2.1.4"
 activity = "1.10.1"
-fragmentKtx = "1.8.0" # Añadido para Fragment KTX
-lifecycle = "2.8.2" # O la última versión estable
-coroutines = "1.8.1" # O la última versión estable
-navigation = "2.7.7" # O la última versión estable
+fragmentKtx = "1.8.0"
+lifecycle = "2.8.2"
+coroutines = "1.8.1"
+firebaseBom = "33.1.0"
+playServicesAuth = "21.3.0"
 
-# Firebase - ¡USA LA ÚLTIMA VERSIÓN DEL BOM!
-firebaseBom = "33.1.0" # Revisa https://firebase.google.com/docs/android/setup#available-libraries
-
-# Google Play Services Auth - Necesita versión explícita
-navigationFragmentKtx = "2.8.9"
-navigationUiKtx = "2.8.9"
-playServicesAuth = "21.3.0" # O la última versión estable
-
-# Testing
+# --- Testing ---
 junit = "4.13.2"
-androidxJunit = "1.2.1" # Renombrado de junitVersion para claridad
+androidxJunit = "1.2.1"
 espressoCore = "3.6.1"
-activityVersion = "1.10.1"
-
 
 [libraries]
-# --- AndroidX Core & UI ---
+# --- Core y UI ---
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
-androidx-navigation-fragment-ktx-v289 = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
-androidx-navigation-ui-ktx-v289 = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigationUiKtx" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
-androidx-activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "activity" } # Cambiado a KTX
-androidx-fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragmentKtx" } # Añadido
+androidx-drawerlayout = { group = "androidx.drawerlayout", name = "drawerlayout", version.ref = "drawerlayout" }
+androidx-activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "activity" }
+androidx-fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragmentKtx" }
 
 # --- Firebase ---
 firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
-firebase-auth = { group = "com.google.firebase", name = "firebase-auth-ktx" } # SIN version.ref (BoM la maneja)
-firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore-ktx" } # Añadido, SIN version.ref
-# firebase-messaging = { group = "com.google.firebase", name = "firebase-messaging-ktx" } # Añadir si se necesita
+firebase-auth = { group = "com.google.firebase", name = "firebase-auth-ktx" }
+firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore-ktx" }
 
-# --- Google Play Services Auth ---
-google-services-auth = { group = "com.google.android.gms", name = "play-services-auth", version.ref = "playServicesAuth" } # Añadido
+# --- Google Play Services ---
+google-services-auth = { group = "com.google.android.gms", name = "play-services-auth", version.ref = "playServicesAuth" }
 
 # --- Lifecycle (ViewModel, LiveData, Runtime) ---
-androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" } # Añadido
-androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycle" } # Añadido
-androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" } # Añadido
+androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycle" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
 
 # --- Coroutines ---
-kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" } # Añadido (opcional, a menudo transitiva)
-kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" } # Añadido
-kotlinx-coroutines-play-services = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-play-services", version.ref = "coroutines" } # Añadido
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
+kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
+kotlinx-coroutines-play-services = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-play-services", version.ref = "coroutines" }
 
 # --- Navigation ---
-androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigation" } # Añadido
-androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigation" } # Añadido
+androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigation" }
+androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigation" }
 
 # --- Testing ---
 junit = { group = "junit", name = "junit", version.ref = "junit" }
-androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidxJunit" } # Alias renombrado
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidxJunit" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
-androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activityVersion" }
-
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
-kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" } # Añadido
-androidx-navigation-safeargs-kotlin = { id = "androidx.navigation.safeargs.kotlin", version.ref = "navigation" } # Añadir si se usa SafeArgs
+kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
+androidx-navigation-safeargs = { id = "androidx.navigation.safeargs", version.ref = "navigation" } # ✅ CORREGIDO (sin ".kotlin")
