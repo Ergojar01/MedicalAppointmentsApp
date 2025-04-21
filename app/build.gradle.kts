@@ -61,7 +61,11 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.activity.ktx) // KTX para Activity (útil con ViewModels)
     implementation(libs.androidx.fragment.ktx) // KTX para Fragment (útil con ViewModels)
-
+    implementation("androidx.core:core-ktx:1.16.0") // O versión más reciente
+    implementation(libs.androidx.appcompat) // O versión más reciente
+    implementation("com.google.android.material:material:1.12.0") // O versión más reciente
+    implementation("androidx.constraintlayout:constraintlayout:2.2.1") // O versión más reciente
+    implementation("androidx.drawerlayout:drawerlayout:1.2.0") // Específicamente para DrawerLayout
     // --- Firebase ---
     // Importa el BoM (Bill of Materials) - ¡ASEGÚRATE DE USAR LA ÚLTIMA VERSIÓN!
     // Revisa https://firebase.google.com/docs/android/setup#available-libraries
