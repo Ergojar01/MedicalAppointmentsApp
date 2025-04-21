@@ -3,8 +3,8 @@
     <string name="menu_doctor_dashboard">Panel Doctor</string>
     <string name="menu_admin_dashboard">Panel Administrador</string>
     <string name="configuracion_admin">Configuración Admin</string>
-    <string name="gestionar_doctores">Gestionar Doctores</string>
     <string name="gestionar_doctores">Aquí se gestionarán los doctores.</string>
+    <string name="gestionar_usuarios">Gestionar Usuarios</string>
 
 
 </resources>
