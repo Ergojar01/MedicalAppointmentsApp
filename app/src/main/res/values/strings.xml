@@ -2,5 +2,6 @@
     <string name="app_name">MedicalAppointmentsApp</string> <string name="menu_patient_dashboard">Panel Paciente</string>
     <string name="menu_doctor_dashboard">Panel Doctor</string>
     <string name="menu_admin_dashboard">Panel Administrador</string>
+    <string name="configuracion_admin">Configuración Admin</string>
 
 </resources>
