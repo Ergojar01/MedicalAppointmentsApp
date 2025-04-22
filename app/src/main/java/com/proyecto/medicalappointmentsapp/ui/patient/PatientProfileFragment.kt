@@ -10,6 +10,7 @@ import com.proyecto.medicalappointmentsapp.databinding.FragmentPatientProfileBin
 class PatientProfileFragment : Fragment() {
 
     private var _binding: FragmentPatientProfileBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -18,7 +19,7 @@ class PatientProfileFragment : Fragment() {
         _binding = FragmentPatientProfileBinding.inflate(inflater, container, false)
         val view = binding.root
         // Aquí cargarías y mostrarías los datos del perfil del paciente
-        binding.textViewProfilePlaceholder.text = "Aquí se mostrarán los datos del perfil."
+        binding.textViewPatientsPlaceholder.text = "Aquí se mostrarán los datos del perfil."
         return view
     }
 

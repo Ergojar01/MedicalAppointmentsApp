@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     private fun setupNavigation() {
-        setSupportActionBar(binding.appBarMain.toolbar) // Configura la Toolbar
+        setSupportActionBar(binding.toolbar) // Configura la Toolbar
 
         drawerLayout = binding.drawerLayout
         navigationView = binding.navView
@@ -155,7 +155,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             UserRole.PATIENT -> R.id.nav_patient_dashboard // ID del fragmento en tu nav_graph
             UserRole.DOCTOR -> R.id.nav_doctor_dashboard  // ID del fragmento en tu nav_graph
             UserRole.ADMIN -> R.id.nav_admin_dashboard   // ID del fragmento en tu nav_graph
-            else -> R.id.nav_default_or_error // Un fragmento por defecto o de error
+            else -> return // Un fragmento por defecto o de error
         }
 
         // Evitar navegar si ya estamos en el destino correcto
