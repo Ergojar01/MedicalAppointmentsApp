@@ -3,37 +3,72 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav_graph"
-    app:startDestination="@id/patientDashboardFragment"> <fragment
-    android:id="@+id/patientDashboardFragment"
-    android:name="com.proyecto.medicalappointmentsapp.ui.patient.PatientDashboardFragment" android:label="Panel Paciente"
-    tools:layout="@layout/fragment_patient_dashboard" /> <fragment
-    android:id="@+id/doctorDashboardFragment"
-    android:name="com.proyecto.medicalappointmentsapp.ui.doctor.DoctorDashboardFragment" android:label="Panel Doctor"
-    tools:layout="@layout/fragment_doctor_dashboard" /> <fragment
-    android:id="@+id/adminDashboardFragment"
-    android:name="com.proyecto.medicalappointmentsapp.ui.admin.AdminDashboardFragment" android:label="Panel Admin"
-    tools:layout="@layout/fragment_admin_dashboard" /> <fragment
-    android:id="@+id/aboutFragment"
-    android:name="com.proyecto.medicalappointmentsapp.ui.AboutFragment" android:label="Acerca de"
-    tools:layout="@layout/fragment_about" /> <fragment
-    android:id="@+id/patientAppointmentsFragment"
-    android:name="com.proyecto.medicalappointmentsapp.ui.patient.PatientAppointmentsFragment" android:label="Mis Citas"
-    tools:layout="@layout/fragment_patient_appointments" /> <fragment
-    android:id="@+id/patientProfileFragment"
-    android:name="com.proyecto.medicalappointmentsapp.ui.patient.PatientProfileFragment" android:label="Mi Perfil"
-    tools:layout="@layout/fragment_patient_profile" /> <fragment
-    android:id="@+id/doctorScheduleFragment"
-    android:name="com.proyecto.medicalappointmentsapp.ui.doctor.DoctorScheduleFragment" android:label="Mi Agenda"
-    tools:layout="@layout/fragment_doctor_schedule" /> <fragment
-    android:id="@+id/doctorPatientsFragment"
-    android:name="com.proyecto.medicalappointmentsapp.ui.doctor.DoctorPatientsFragment" android:label="Mis Pacientes"
-    tools:layout="@layout/fragment_doctor_patients" /> <fragment
-    android:id="@+id/adminUsersFragment"
-    android:name="com.proyecto.medicalappointmentsapp.ui.admin.AdminUsersFragment" android:label="Gestionar Usuarios"
-    tools:layout="@layout/fragment_admin_users" /> <fragment
-    android:id="@+id/adminDoctorsFragment"
-    android:name="com.proyecto.medicalappointmentsapp.ui.admin.AdminDoctorsFragment" android:label="Gestionar Doctores"
-    tools:layout="@layout/fragment_admin_doctors" /> <fragment
-    android:id="@+id/adminSettingsFragment"
-    android:name="com.proyecto.medicalappointmentsapp.ui.admin.AdminSettingsFragment" android:label="Configuración Admin"
-    tools:layout="@layout/fragment_admin_settings" /> </navigation>
+    app:startDestination="@id/nav_patient_dashboard">
+
+    <fragment
+        android:id="@+id/nav_patient_dashboard"
+        android:name="com.proyecto.medicalappointmentsapp.ui.patient.PatientDashboardFragment"
+        android:label="Panel Paciente"
+        tools:layout="@layout/fragment_patient_dashboard" />
+
+    <fragment
+        android:id="@+id/nav_doctor_dashboard"
+        android:name="com.proyecto.medicalappointmentsapp.ui.doctor.DoctorDashboardFragment"
+        android:label="Panel Doctor"
+        tools:layout="@layout/fragment_doctor_dashboard" />
+
+    <fragment
+        android:id="@+id/nav_admin_dashboard"
+        android:name="com.proyecto.medicalappointmentsapp.ui.admin.AdminDashboardFragment"
+        android:label="Panel Admin"
+        tools:layout="@layout/fragment_admin_dashboard" />
+
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.proyecto.medicalappointmentsapp.ui.AboutFragment"
+        android:label="Acerca de"
+        tools:layout="@layout/fragment_about" />
+
+    <fragment
+        android:id="@+id/patientAppointmentsFragment"
+        android:name="com.proyecto.medicalappointmentsapp.ui.patient.PatientAppointmentsFragment"
+        android:label="Mis Citas"
+        tools:layout="@layout/fragment_patient_appointments" />
+
+    <fragment
+        android:id="@+id/patientProfileFragment"
+        android:name="com.proyecto.medicalappointmentsapp.ui.patient.PatientProfileFragment"
+        android:label="Mi Perfil"
+        tools:layout="@layout/fragment_patient_profile" />
+
+    <fragment
+        android:id="@+id/doctorScheduleFragment"
+        android:name="com.proyecto.medicalappointmentsapp.ui.doctor.DoctorScheduleFragment"
+        android:label="Mi Agenda"
+        tools:layout="@layout/fragment_doctor_schedule" />
+
+    <fragment
+        android:id="@+id/doctorPatientsFragment"
+        android:name="com.proyecto.medicalappointmentsapp.ui.doctor.DoctorPatientsFragment"
+        android:label="Mis Pacientes"
+        tools:layout="@layout/fragment_doctor_patients" />
+
+    <fragment
+        android:id="@+id/adminUsersFragment"
+        android:name="com.proyecto.medicalappointmentsapp.ui.admin.AdminUsersFragment"
+        android:label="Gestionar Usuarios"
+        tools:layout="@layout/fragment_admin_users" />
+
+    <fragment
+        android:id="@+id/adminDoctorsFragment"
+        android:name="com.proyecto.medicalappointmentsapp.ui.admin.AdminDoctorsFragment"
+        android:label="Gestionar Doctores"
+        tools:layout="@layout/fragment_admin_doctors" />
+
+    <fragment
+        android:id="@+id/adminSettingsFragment"
+        android:name="com.proyecto.medicalappointmentsapp.ui.admin.AdminSettingsFragment"
+        android:label="Configuración Admin"
+        tools:layout="@layout/fragment_admin_settings" />
+
+</navigation>

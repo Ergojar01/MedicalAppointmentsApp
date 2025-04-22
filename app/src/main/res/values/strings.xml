@@ -1,10 +1,14 @@
 <resources>
-    <string name="app_name">MedicalAppointmentsApp</string> <string name="menu_patient_dashboard">Panel Paciente</string>
+    <string name="app_name">MedicalAppointmentsApp</string>
+    <string name="menu_patient_dashboard">Panel Paciente</string>
     <string name="menu_doctor_dashboard">Panel Doctor</string>
     <string name="menu_admin_dashboard">Panel Administrador</string>
     <string name="configuracion_admin">Configuración Admin</string>
     <string name="gestionar_doctores">Gestionar Doctores</string>
+    <string name="gestionar_usuarios">Gestionar Usuarios</string>
 
-
-
+    <string name="gestionar_pacientes">Gestionar Pacientes</string>
+    <string name="gestionar_horario">Gestionar Horario</string>
+    <string name="gestionar_citas">Gestionar Citas</string>
+    <string name="mi_perfil">Mi Perfil</string>
 </resources>

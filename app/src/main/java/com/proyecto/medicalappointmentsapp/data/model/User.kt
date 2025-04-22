@@ -1,10 +1,8 @@
 package com.proyecto.medicalappointmentsapp.data.model
+
 import android.os.Parcelable
 import com.google.firebase.firestore.DocumentId
-import com.google.firebase.firestore.ServerTimestamp
 import kotlinx.parcelize.Parcelize
-import java.util.Date
-
 
 @Parcelize
 data class User(
@@ -27,8 +25,6 @@ enum class UserRole(val roleName: String) {
 
     companion object {
         fun fromString(role: String?): UserRole? {
-            // entries es una propiedad auto-generada para Enums desde Kotlin 1.9+
-            // Si usas una versión anterior, reemplaza entries por values()
             return entries.find { it.roleName.equals(role, ignoreCase = true) }
         }
     }

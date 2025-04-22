@@ -2,8 +2,10 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.google.gms.google.services)
-    alias(libs.plugins.androidx.navigation.safeargs) // ✅ Safe Args plugin (sin .kotlin)
-    id("kotlin-kapt") // ✅ Necesario para Data Binding
+    alias(libs.plugins.androidx.navigation.safeargs) // Safe Args
+    alias(libs.plugins.dagger.hilt.android) // Hilt (inyección de dependencias)
+    id("kotlin-kapt") // Necesario para Data Binding, Room, Hilt
+    id("kotlin-parcelize")
 }
 
 android {
@@ -39,7 +41,10 @@ android {
     }
 
     buildFeatures {
-        dataBinding = true // ✅ Habilitar Data Binding
+        dataBinding = true // Habilita Data Binding
+    }
+    buildFeatures {
+        viewBinding = true
     }
 }
 
@@ -49,28 +54,37 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.constraintlayout)
-    implementation(libs.androidx.drawerlayout) // ✅ DrawerLayout
+    implementation(libs.androidx.drawerlayout)
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.fragment.ktx)
 
     // --- Firebase ---
-    implementation(platform(libs.firebase.bom)) // ✅ Firebase BoM
+    implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.auth)
     implementation(libs.firebase.firestore)
 
-    // --- Arquitectura (ViewModel, LiveData, Scope) ---
+    // --- ViewModel, LiveData, Lifecycle ---
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
 
-    // --- Coroutines ---
-    implementation(libs.kotlinx.coroutines.core)
-    implementation(libs.kotlinx.coroutines.android)
-    implementation(libs.kotlinx.coroutines.play.services) // ✅ útil si usás Tasks.await()
-
     // --- Navigation ---
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+
+    // --- Coroutines ---
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.kotlinx.coroutines.play.services)
+
+    // --- Room (opcional para almacenamiento local) ---
+    implementation(libs.androidx.room.runtime)
+    kapt(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
+
+    // --- Hilt (inyección de dependencias) ---
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
 
     // --- Testing ---
     testImplementation(libs.junit)

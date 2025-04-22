@@ -4,6 +4,8 @@ agp = "8.8.0"
 kotlin = "1.9.24"
 googleGmsGoogleServices = "4.4.2"
 navigation = "2.7.7"
+hilt = "2.51.1"
+room = "2.6.1"
 drawerlayout = "1.2.0"
 
 # --- Librerías ---
@@ -55,6 +57,15 @@ kotlinx-coroutines-play-services = { group = "org.jetbrains.kotlinx", name = "ko
 androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigation" }
 androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigation" }
 
+# --- Hilt ---
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
+
+# --- Room ---
+androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+
 # --- Testing ---
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidxJunit" }
@@ -65,4 +76,5 @@ android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
 kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
-androidx-navigation-safeargs = { id = "androidx.navigation.safeargs", version.ref = "navigation" } # ✅ CORREGIDO (sin ".kotlin")
+androidx-navigation-safeargs = { id = "androidx.navigation.safeargs", version.ref = "navigation" }
+dagger-hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
