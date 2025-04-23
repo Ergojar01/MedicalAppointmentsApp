@@ -202,7 +202,7 @@ class RegisterActivity : AppCompatActivity() {
                 // Incluye campos de 'master' y el 'role' de 'Cambios-Zebas'
                 val userMap = mapOf(
                     "idUsuario" to uid,       // Clave de Cambios-Zebas
-                    "name"      to name,      // De master
+                    "nombre"      to name,      // De master
                     "lastName"  to lastName,  // De master
                     "username"  to username.ifEmpty { null }, // De master (opcional)
                     "email"     to email,     // Email (usar 'email' como clave es común)

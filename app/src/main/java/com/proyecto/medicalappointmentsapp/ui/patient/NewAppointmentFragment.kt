@@ -49,7 +49,7 @@ class NewAppointmentFragment : Fragment() {
         val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_dropdown_item, initialItems)
         binding.spinnerDoctor.adapter = adapter
 
-
+        // 🔧 Corrección importante aquí: se cambia "user" por "users"
         db.collection("users")
             .whereEqualTo("role", UserRole.DOCTOR.roleName)
             .get()

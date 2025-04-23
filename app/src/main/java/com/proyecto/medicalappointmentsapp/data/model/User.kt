@@ -20,8 +20,8 @@ data class User(
 
 enum class UserRole(val roleName: String) {
     ADMIN("Administrador"),
-    PATIENT("Paciente"),
-    DOCTOR("Doctor");
+    PATIENT("PACIENTE"),
+    DOCTOR("DOCTOR");
 
     companion object {
         fun fromString(role: String?): UserRole? {
