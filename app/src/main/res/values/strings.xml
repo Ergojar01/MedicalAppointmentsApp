@@ -11,4 +11,14 @@
     <string name="gestionar_horario">Gestionar Horario</string>
     <string name="gestionar_citas">Gestionar Citas</string>
     <string name="mi_perfil">Mi Perfil</string>
+    <string name="hint_email">Correo electrónico</string>
+    <string name="helper_email">Ingresa un email válido</string>
+    <string name="hint_password">Contraseña</string>
+    <string name="helper_password">Mínimo 8 caracteres</string>
+    <string name="hint_confirm_password">Confirmar contraseña</string>
+    <string name="text_terms_and_privacy">
+    He leído y acepto los <a href="https://tusitio.com/terminos">Términos</a> y la <a href="https://tusitio.com/privacidad">Política de Privacidad</a>
+</string>
+    <string name="btn_register">Crear cuenta</string>
+
 </resources>
