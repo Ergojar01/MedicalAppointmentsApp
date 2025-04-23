@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app   ="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:id="@+id/root" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
     android:padding="24dp"
@@ -14,97 +14,79 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Nombre -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilName"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nombre"
-            app:errorEnabled="true">
+            android:hint="@string/hint_name" app:errorEnabled="true">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName"/>
-        </com.google.android.material.textfield.TextInputLayout>
+                android:inputType="textPersonName|textCapWords"/> </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Apellidos -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilLastName"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:hint="Apellidos"
-            app:errorEnabled="true">
+            android:hint="@string/hint_last_name" app:errorEnabled="true">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etLastName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName"/>
-        </com.google.android.material.textfield.TextInputLayout>
+                android:inputType="textPersonName|textCapWords"/> </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Usuario (opc.) -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilUsername"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:hint="Nombre de usuario (opcional)">
-            <com.google.android.material.textfield.TextInputEditText
+            android:hint="@string/hint_username_optional"> <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etUsername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName"/>
-        </com.google.android.material.textfield.TextInputLayout>
+                android:inputType="text"/> </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Correo electrónico -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilEmail"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:hint="Correo electrónico"
-            app:errorEnabled="true"
-            app:helperText="Ingresa un email válido">
-            <com.google.android.material.textfield.TextInputEditText
+            android:hint="@string/hint_email" app:errorEnabled="true"
+            app:helperText="@string/helper_email"> <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Número de celular -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilPhone"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:hint="Número de celular"
-            app:errorEnabled="true"
-            app:helperText="Ej: +507 6123-4567">
-            <com.google.android.material.textfield.TextInputEditText
+            android:hint="@string/hint_phone" app:errorEnabled="true"
+            app:helperText="@string/helper_phone"> <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="phone"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Contraseña -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilPassword"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:hint="Contraseña"
-            app:errorEnabled="true"
-            app:helperText="Mínimo 8 caracteres"
-            app:passwordToggleEnabled="true">
+            android:hint="@string/hint_password" app:errorEnabled="true"
+            app:helperText="@string/helper_password" app:passwordToggleEnabled="true">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etPassword"
                 android:layout_width="match_parent"
@@ -112,15 +94,13 @@
                 android:inputType="textPassword"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Confirmar contraseña -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilConfirm"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:hint="Confirmar contraseña"
-            app:errorEnabled="true"
+            android:hint="@string/hint_confirm_password" app:errorEnabled="true"
             app:passwordToggleEnabled="true">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etConfirm"
@@ -129,32 +109,32 @@
                 android:inputType="textPassword"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Términos y Política de Privacidad (texto + spans en código) -->
         <CheckBox
             android:id="@+id/chkTerms"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:autoLink="none"
-            android:linksClickable="true" />
+            android:linksClickable="true"
+            android:text="@string/terms_and_privacy_prompt" />
 
-        <!-- Botón Crear cuenta -->
         <Button
             android:id="@+id/btnRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="Crear cuenta"/>
-
-        <!-- Indicador de carga -->
-        <ProgressBar
+            android:text="@string/action_create_account"/> <TextView
+            android:id="@+id/textViewLoginLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/prompt_already_have_account" android:textColor="?attr/colorPrimary" android:padding="8dp"/> <ProgressBar
             android:id="@+id/progressRegister"
             style="?android:attr/progressBarStyle"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
-            android:visibility="gone"/>
-
-    </LinearLayout>
+            android:visibility="gone"
+            tools:visibility="visible"/> </LinearLayout>
 </ScrollView>

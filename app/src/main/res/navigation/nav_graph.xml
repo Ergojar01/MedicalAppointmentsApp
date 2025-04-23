@@ -9,7 +9,18 @@
         android:id="@+id/nav_patient_dashboard"
         android:name="com.proyecto.medicalappointmentsapp.ui.patient.PatientDashboardFragment"
         android:label="Panel Paciente"
-        tools:layout="@layout/fragment_patient_dashboard" />
+        tools:layout="@layout/fragment_patient_dashboard">
+
+        <action
+            android:id="@+id/action_nav_patient_dashboard_to_newAppointmentFragment"
+            app:destination="@id/newAppointmentFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/newAppointmentFragment"
+        android:name="com.proyecto.medicalappointmentsapp.ui.patient.NewAppointmentFragment"
+        android:label="Nueva Cita"
+        tools:layout="@layout/fragment_new_appointment" />
 
     <fragment
         android:id="@+id/nav_doctor_dashboard"
