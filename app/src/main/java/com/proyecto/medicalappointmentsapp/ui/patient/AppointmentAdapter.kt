@@ -2,8 +2,11 @@ package com.proyecto.medicalappointmentsapp.ui.patient
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat // Importa ContextCompat si quieres cambiar colores
 import androidx.recyclerview.widget.RecyclerView
+import com.proyecto.medicalappointmentsapp.R // Importa R si usas colores
 import com.proyecto.medicalappointmentsapp.data.model.Appointment
+import com.proyecto.medicalappointmentsapp.data.model.AppointmentStatus // Opcional: para usar el enum al comparar
 import com.proyecto.medicalappointmentsapp.databinding.ItemAppointmentBinding
 import java.text.SimpleDateFormat
 import java.util.*
@@ -32,6 +35,22 @@ class AppointmentAdapter(
         fun bind(appointment: Appointment) {
             binding.textViewDoctor.text = "Dr. ${appointment.nombreDoctor}"
             binding.textViewFecha.text = formatDate(appointment.fecha)
+            // --- Línea añadida ---
+            binding.textViewEstado.text = "Estado: ${appointment.estado}" // Asume que el ID es textViewEstado
+
+            // --- Opcional: Cambiar color según estado ---
+
+            val context = binding.root.context
+            val colorResId = when (appointment.estado) {
+                AppointmentStatus.PENDIENTE.statusName -> R.color.colorPending // Define estos colores en colors.xml
+                AppointmentStatus.CONFIRMADA.statusName -> R.color.colorConfirmed
+                AppointmentStatus.CANCELADA_PACIENTE.statusName,
+                AppointmentStatus.CANCELADA_DOCTOR.statusName -> R.color.colorCancelled
+                else -> R.color.colorDefaultText // Un color por defecto
+            }
+            binding.textViewEstado.setTextColor(ContextCompat.getColor(context, colorResId))
+
+            // --- Fin Opcional ---
         }
 
         private fun formatDate(date: Date?): String {
