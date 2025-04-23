@@ -22,7 +22,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.proyecto.medicalappointmentsapp.R
 import com.proyecto.medicalappointmentsapp.data.model.UserRole // De Cambios-Zebas
 import com.proyecto.medicalappointmentsapp.databinding.ActivityRegisterBinding
-import com.proyecto.medicalappointmentsapp.ui.MainActivity // Asumiendo que esta es la actividad principal tras registro/login (de Cambios-Zebas)
+import com.proyecto.medicalappointmentsapp.ui.auth.MainActivity // Asumiendo que esta es la actividad principal tras registro/login (de Cambios-Zebas)
 import com.proyecto.medicalappointmentsapp.ui.auth.LoginActivity // De Cambios-Zebas (para el link de login)
 
 

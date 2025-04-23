@@ -6,19 +6,21 @@
     <string name="configuracion_admin">Configuración Admin</string>
     <string name="gestionar_doctores">Gestionar Doctores</string>
     <string name="gestionar_usuarios">Gestionar Usuarios</string>
-
     <string name="gestionar_pacientes">Gestionar Pacientes</string>
     <string name="gestionar_horario">Gestionar Horario</string>
     <string name="gestionar_citas">Gestionar Citas</string>
     <string name="mi_perfil">Mi Perfil</string>
-    <string name="hint_email">Correo electrónico</string>
-    <string name="helper_email">Ingresa un email válido</string>
-    <string name="hint_password">Contraseña</string>
-    <string name="helper_password">Mínimo 8 caracteres</string>
-    <string name="hint_confirm_password">Confirmar contraseña</string>
-    <string name="text_terms_and_privacy">
-    He leído y acepto los <a href="https://tusitio.com/terminos">Términos</a> y la <a href="https://tusitio.com/privacidad">Política de Privacidad</a>
-</string>
-    <string name="btn_register">Crear cuenta</string>
+
+    <string name="hint_name">Nombre</string>
+    <string name="hint_last_name">Apellidos</string>
+    <string name="hint_username_optional">Nombre de usuario (opcional)</string>
+    <string name="hint_email">Correo electrónico</string> <string name="helper_email">Ingresa un email válido</string> <string name="hint_phone">Número de celular</string>
+    <string name="helper_phone">Ej: +507 6123-4567</string> <string name="hint_password">Contraseña</string> <string name="helper_password">Mínimo 8 caracteres</string> <string name="hint_confirm_password">Confirmar contraseña</string> <string name="terms_and_privacy_prompt">He leído y acepto los Términos y la Política de Privacidad</string> <string name="terms">Términos</string> <string name="privacy_policy">Política de Privacidad</string> <string name="terms_url">https://policies.google.com/terms</string> <string name="privacy_url">https://policies.google.com/privacy</string> <string name="action_create_account">Crear cuenta</string> <string name="prompt_already_have_account">¿Ya tienes cuenta? Inicia Sesión</string>
+
+    <string name="error_required">Obligatorio</string>
+    <string name="error_invalid_email">Correo inválido</string>
+    <string name="error_invalid_phone">Número inválido</string>
+    <string name="error_password_length">Mínimo %d caracteres</string> <string name="error_password_mismatch">Las contraseñas no coinciden</string>
+    <string name="error_terms_not_accepted">Debes aceptar los términos y la política de privacidad</string>
 
 </resources>
