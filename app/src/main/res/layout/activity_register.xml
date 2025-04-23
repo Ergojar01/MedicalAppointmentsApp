@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:app   ="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -45,7 +45,7 @@
                 android:inputType="textPersonName"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Nombre de usuario (opcional) -->
+        <!-- Usuario (opc.) -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilUsername"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -75,6 +75,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Número de celular -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilPhone"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Número de celular"
+            app:errorEnabled="true"
+            app:helperText="Ej: +507 6123-4567">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Contraseña -->
@@ -112,16 +129,16 @@
                 android:inputType="textPassword"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Términos y privacidad -->
+        <!-- Términos y Política de Privacidad (texto + spans en código) -->
         <CheckBox
             android:id="@+id/chkTerms"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:linksClickable="true"
-            android:text="He leído y acepto los Términos y la Política de Privacidad" />
+            android:autoLink="none"
+            android:linksClickable="true" />
 
-        <!-- Botón de registro -->
+        <!-- Botón Crear cuenta -->
         <Button
             android:id="@+id/btnRegister"
             android:layout_width="match_parent"
@@ -138,5 +155,6 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
             android:visibility="gone"/>
+
     </LinearLayout>
 </ScrollView>
