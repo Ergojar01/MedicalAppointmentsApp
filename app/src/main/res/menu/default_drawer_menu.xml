@@ -4,12 +4,21 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
+
         <item
-            android:id="@+id/menu_item_home" android:title="Inicio" />
+            android:id="@+id/nav_patient_dashboard"
+            android:icon="@drawable/ic_home"
+            android:title="Inicio" />
+
         <item
-            android:id="@+id/menu_item_login" android:title="Iniciar Sesión" />
+            android:id="@+id/menu_item_login"
+            android:icon="@drawable/ic_login"
+            android:title="Iniciar Sesión" />
+
         <item
-            android:id="@+id/menu_item_about" android:title="Acerca de" />
+            android:id="@+id/aboutFragment"
+            android:icon="@drawable/ic_info"
+            android:title="Acerca de" />
     </group>
 
 </menu>
