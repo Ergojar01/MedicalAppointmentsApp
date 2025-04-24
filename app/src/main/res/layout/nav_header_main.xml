@@ -1,19 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="176dp" android:background="?attr/colorPrimaryVariant" android:gravity="bottom"
+    android:layout_height="176dp"
+    android:background="?attr/colorPrimaryVariant"
     android:orientation="vertical"
+    android:gravity="bottom|center_horizontal"
     android:padding="16dp"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark"> <TextView
-    android:id="@+id/textViewNavHeaderName" android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:paddingTop="8dp"
-    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-    android:text="Nombre Usuario"/>
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
+    <!-- Imagen de perfil -->
+    <ImageView
+        android:id="@+id/imageViewNavHeader"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/iconpp"
+        android:contentDescription="@string/nav_header_image"
+        android:scaleType="centerCrop"/>
+
+
+    <!-- Nombre de usuario -->
     <TextView
-        android:id="@+id/textViewNavHeaderEmail" android:layout_width="wrap_content"
+        android:id="@+id/textViewNavHeaderName"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="usuario@ejemplo.com"/>
+        android:paddingTop="8dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:text="Nombre Usuario" />
+
+    <!-- Email de usuario -->
+    <TextView
+        android:id="@+id/textViewNavHeaderEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="usuario@ejemplo.com" />
 
 </LinearLayout>

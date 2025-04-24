@@ -22,5 +22,5 @@
     <string name="error_invalid_phone">Número inválido</string>
     <string name="error_password_length">Mínimo %d caracteres</string> <string name="error_password_mismatch">Las contraseñas no coinciden</string>
     <string name="error_terms_not_accepted">Debes aceptar los términos y la política de privacidad</string>
-
+    <string name="nav_header_image">Imagen de perfil</string>
 </resources>
