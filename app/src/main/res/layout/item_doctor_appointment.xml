@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginHorizontal="8dp"
-    android:layout_marginVertical="4dp"
+    android:layout_margin="8dp"
     app:cardCornerRadius="8dp"
     app:cardElevation="4dp">
 
@@ -14,6 +13,7 @@
         android:layout_height="wrap_content"
         android:padding="16dp">
 
+        <!-- Etiqueta: Paciente -->
         <TextView
             android:id="@+id/textViewPatientNameLabel"
             android:layout_width="wrap_content"
@@ -23,16 +23,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <!-- Valor: Paciente -->
         <TextView
             android:id="@+id/textViewPatientNameValue"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/textViewPatientNameLabel"
+            app:layout_constraintBaseline_toBaselineOf="@id/textViewPatientNameLabel"
+            app:layout_constraintStart_toEndOf="@id/textViewPatientNameLabel"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textViewPatientNameLabel"
-            tools:text="Nombre Apellido Paciente" />
+            tools:text="Nombre Apellido" />
 
+        <!-- Etiqueta: Fecha -->
         <TextView
             android:id="@+id/textViewAppointmentDateLabel"
             android:layout_width="wrap_content"
@@ -41,18 +43,20 @@
             android:text="Fecha:"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewPatientNameLabel" />
+            app:layout_constraintTop_toBottomOf="@id/textViewPatientNameLabel" />
 
+        <!-- Valor: Fecha -->
         <TextView
             android:id="@+id/textViewAppointmentDateValue"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/textViewAppointmentDateLabel"
+            app:layout_constraintBaseline_toBaselineOf="@id/textViewAppointmentDateLabel"
+            app:layout_constraintStart_toEndOf="@id/textViewAppointmentDateLabel"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textViewAppointmentDateLabel"
-            tools:text="25/04/2025 10:00 AM" />
+            tools:text="dd/MM/yyyy HH:mm" />
 
+        <!-- Etiqueta: Motivo -->
         <TextView
             android:id="@+id/textViewAppointmentReasonLabel"
             android:layout_width="wrap_content"
@@ -61,45 +65,49 @@
             android:text="Motivo:"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewAppointmentDateLabel" />
+            app:layout_constraintTop_toBottomOf="@id/textViewAppointmentDateLabel" />
 
+        <!-- Valor: Motivo -->
         <TextView
             android:id="@+id/textViewAppointmentReasonValue"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/textViewAppointmentReasonLabel"
+            app:layout_constraintBaseline_toBaselineOf="@id/textViewAppointmentReasonLabel"
+            app:layout_constraintStart_toEndOf="@id/textViewAppointmentReasonLabel"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textViewAppointmentReasonLabel"
-            tools:text="Consulta general por dolor de cabeza" />
+            tools:text="Motivo de la consulta aquí" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/buttonAccept"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="wrap_content"
+        <!-- Botones -->
+        <LinearLayout
+            android:id="@+id/layoutButtons"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Aceptar"
-            android:textColor="@android:color/holo_green_dark"
-            app:layout_constraintEnd_toStartOf="@+id/buttonReject"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintHorizontal_chainStyle="packed"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/textViewAppointmentReasonValue"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewAppointmentReasonValue" />
+            app:layout_constraintEnd_toEndOf="parent">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/buttonReject"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="Rechazar"
-            android:textColor="@android:color/holo_red_dark"
-            app:layout_constraintBaseline_toBaselineOf="@+id/buttonAccept"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/buttonAccept" />
+            <Button
+                android:id="@+id/buttonReject"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:text="Rechazar"
+                android:textColor="@color/design_default_color_error" />
 
+            <Button
+                android:id="@+id/buttonAccept"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                android:text="Aceptar" />
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

@@ -10,6 +10,7 @@ import java.util.*
 data class Appointment(
     @DocumentId val idCita: String = "",
     @ServerTimestamp val fecha: Date? = null,
+
     val estado: String = AppointmentStatus.PENDIENTE.statusName,
     val idPaciente: String = "",
     val nombrePaciente: String = "",
@@ -21,6 +22,7 @@ data class Appointment(
 ) : Parcelable
 
 enum class AppointmentStatus(val statusName: String) {
+
     PENDIENTE("Pendiente"),
     CONFIRMADA("Confirmada"),
     ATENDIDA("Atendida"),

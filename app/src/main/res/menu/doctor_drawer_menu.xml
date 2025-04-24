@@ -5,9 +5,14 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/menu_item_doctor_schedule" android:title="Mi Agenda" />
+            android:id="@+id/menu_item_doctor_schedule"
+            android:icon="@drawable/ic_calendar" android:title="Mi Agenda" />
         <item
-            android:id="@+id/menu_item_doctor_patients" android:title="Mis Pacientes" />
-    </group>
+            android:id="@+id/doctorPatientsFragment"
+            android:icon="@drawable/ic_people" android:title="Mis Pacientes" />
+        <item
+            android:id="@+id/doctorAppointmentsFragment"
+            android:icon="@drawable/ic_doctor" android:title="Citas Pendientes" />
 
-</menu>
+    </group> </menu>
+
